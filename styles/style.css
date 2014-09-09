@@ -1,0 +1,129 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	background-color: #3a3a45;
+}
+
+h1 {
+	color: white;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+header {
+	height: 80px;
+}
+
+#container {
+	width: 760px;
+	height: 100%;
+	margin: 0px auto;
+}
+
+#bottombar {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -380px;
+	width: 760px;
+	padding: 30px 0px;
+}
+
+
+.celebs {
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+}
+
+.dicaprio, .williams, .smith, .portman {
+	display: none;
+}
+
+.clooney {
+	background-image: url('../images/clooney.png');
+}
+
+.dicaprio {
+	background-image: url('../images/dicaprio.png');
+}
+
+.williams {
+	background-image: url('../images/williams.png');
+}
+
+.smith {
+	background-image: url('../images/smith.png');
+}
+
+.portman {
+	background-image: url('../images/portman.png');
+}
+
+.clooney, .dicaprio, .williams, .smith, .portman {
+	background-repeat: no-repeat;
+	width: 760px;
+	height: 533px;
+}
+
+.quiz {
+	padding-top: 50px;
+}
+
+.quizquestion {
+	width: 520px;
+	font-size: 40px;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	color: white;
+	line-height: 110%;
+	float: left;
+}
+
+.quizbuttons {
+	width: 240px;
+	float: right;
+	display: inline-block;
+}
+
+.circlebutton {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	font-size: 20px;
+	color: white;
+	background-color: #bc5d24;
+	font-weight: 400;
+	display: inline-block;
+	text-align: center;
+	padding: 40px 0px;
+}
+
+.leftalign {
+	float: left;
+}
+
+.rightalign {
+	float: right;
+}
+
+.score {
+	font-size: 20px;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 400;
+	color: white;
+}
+
+.info {
+	font-size: 16px;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	color: #808080;
+}
