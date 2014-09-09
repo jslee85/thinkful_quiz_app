@@ -178,6 +178,16 @@ header {
 	font-weight: 300;
 	color: white;
 	margin-top: 20px;
+	display: inline-block;
+}
+
+.pointtotal {
+	font-size: 50px;
+	font-family: 'Merriweather', Georgia, serif;
+	font-weight: 300;
+	color: #808080;
+	margin-top: 20px;
+	display: inline-block;
 }
 
 .info {
