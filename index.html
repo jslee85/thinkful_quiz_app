@@ -10,8 +10,7 @@
 		<link rel="stylesheet" href="styles/reset.css">
 		<link rel="stylesheet" href="styles/style.css"/> 
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
-
+		<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700,300italic' rel='stylesheet' type='text/css'>
 		<!-- JavaScript -->
 
 	</head>
@@ -20,9 +19,17 @@
 			<header>
 				<div class="leftalign">
 					<h1>The Oscars Quiz</h1>
+					<p class="questioncount">1 of 5</p>
+					<div class="quizfeedback">
+						<p class="quizresult"></p>
+						<p class="quizresult"></p>
+						<p class="quizresult"></p>
+						<p class="quizresult"></p>
+						<p class="quizresult"></p>
+					</div>
 				</div>
 				<div class="rightalign">
-					<p>Share</p>
+					<p id="sharebutton">Share</p>
 				</div>			
 			</header>
 
@@ -47,6 +54,7 @@
 			<footer id="bottombar">
 				<div class="leftalign">
 					<p class="score">Your score</p>
+					<p class="points">20/100</p>
 				</div>
 				<div class="rightalign">
 					<p class="info">About this site</p>
