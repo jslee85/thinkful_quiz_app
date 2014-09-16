@@ -25,6 +25,44 @@ html {
 }
 
 
+/*---Modal Styles---*/
+
+.overlay {
+	border-radius: 2%;
+	width: 40%;
+	background: #bc5d24;
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	margin: 0;
+	padding: 40px;
+	z-index: 1000;
+	text-align: center;
+}
+
+.content {
+	color: white;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	padding-top: 20px;
+	line-height: 120%;
+}
+
+.close {
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	background: #1F253D;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 3px;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 30px;
+}
+
+
 /*---Header Styles---*/
 
 h1 {
@@ -34,6 +72,13 @@ h1 {
 	font-size: 16px;
 	display: inline-block;
 	padding-top: 44px;
+}
+
+h3 {
+	color: white;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 40px;
 }
 
 header {
@@ -53,7 +98,7 @@ header {
 	margin-top: 42px;
 }
 
-.questioncount {
+.currentquestion {
 	font-family: 'Merriweather', Georgia, serif;
 	font-weight: 300;
 	font-size: 16px;
@@ -62,6 +107,16 @@ header {
 	display: inline-block;
 	padding-top: 44px;
 }
+
+.questioncount {
+	font-family: 'Merriweather', Georgia, serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: #bc5d24;
+	display: inline-block;
+	padding-top: 44px;
+}
+
 
 .quizfeedback {
 	margin-left: 20px;
@@ -162,6 +217,11 @@ header {
 	text-align: center;
 	padding: 40px 0px;
 	margin-left: 15px;
+	cursor: pointer;
+}
+
+.circlebutton:hover {
+	background-color: #c97d50;
 }
 
 
@@ -208,4 +268,5 @@ header {
 	font-weight: 300;
 	color: #808080;
 	padding-top: 65px;
+	cursor: pointer;
 }

@@ -18,10 +18,20 @@
 	</head>
 	<body>
 		<div id="container">
+			<!-- Modal Box -->
+			<div class="overlay" id="modal">
+				<div>
+					<h3>The Oscars Quiz</h3>
+					<p class="content">It's surprising how many talented actors<br> have not won an Oscar. Think you know your<br> Oscar-winning actors? Let's find out.</p>
+					<a class="close" href="#">Get started</a>
+				</div>
+			</div>
+
 			<header>
 				<div class="leftalign">
 					<h1>The Oscars Quiz</h1>
-					<p class="questioncount">1 of 5</p>
+					<p class="currentquestion">1</p>
+					<p class="questioncount">of 5</p>
 					<div class="quizfeedback">
 						<p class="quizresult correct"></p>
 						<p class="quizresult incorrect"></p>
@@ -36,11 +46,11 @@
 			</header>
 
 			<section class="celebs">
-				<div class="clooney"></div>
-				<div class="dicaprio"></div>
-				<div class="williams"></div>
-				<div class="smith"></div>
-				<div class="portman"></div>
+				<div class="actor clooney"></div>
+				<div class="actor dicaprio"></div>
+				<div class="actor williams"></div>
+				<div class="actor smith"></div>
+				<div class="actor portman"></div>
 			</section>
 
 			<section class="quiz">
@@ -48,8 +58,8 @@
 					<p>Does George Clooney <br>have an Oscar?</p>
 				</div>
 				<div class="quizbuttons">
-					<span class="circlebutton">Yes</span>
-					<span class="circlebutton">No</span>
+					<span class="circlebutton yes">Yes</span>
+					<span class="circlebutton no">No</span>
 				</div>
 			</section>
 
