@@ -1,4 +1,4 @@
-var questionCount;
+var questionCount = 0;
 
 $(document).ready(function(){	
 	/*--- Display information modal box ---*/
@@ -11,22 +11,21 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-  	$('.circlebutton').mousedown(function() {
-		stateChange('dicaprio');	
-	});
-
-	$("form").submit(function(e) {
-		if (!bingo) {
-			newGuess = $('#userGuess').val();
-			$('#userGuess').val('');
-			guessPass = checkNumber(newGuess);
-	 		if(!guessPass) {
-	  			questionCount++;
-				updateCount(questionCount);
-			}
-  		}
+  	/*--- Begin the question count ---*/
+	$(".close").on('click', function() {
+		questionCount++;
+		updateCount(questionCount);
   	});
+
+  	/*--- Hacky method ---*/
+	$(".yes").on('click', function() {
+		stateChange('dicaprio');
+		$('.celebname').text('Leo DiCaprio');
+		$('.one').addClass('correct');
+		$('.points').text('20');
+	});
 });
+
 
 function stateChange(str) {
     $('.actor').hide();
