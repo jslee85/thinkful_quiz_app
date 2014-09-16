@@ -1,4 +1,5 @@
 var questionCount = 0;
+var quizScore = 0;
 
 $(document).ready(function(){	
 	/*--- Display information modal box ---*/
@@ -18,15 +19,24 @@ $(document).ready(function(){
   	});
 
   	/*--- Hacky method ---*/
-	$(".yes").on('click', function() {
+	$(".circlebutton").on('click', function() {
 		stateChange('dicaprio');
+		questionCount++;
+		updateCount(questionCount);
 		$('.celebname').text('Leo DiCaprio');
-		$('.one').addClass('correct');
-		$('.points').text('20');
+		if ($(this).hasClass( "yes")) {
+			quizScore+=20;
+			updateScore(quizScore);
+			$('.one').addClass('correct');
+		}
+		else {
+			$('.one').addClass('incorrect');
+		}
 	});
 });
 
 
+/*--- Show correct celebrity image ---*/
 function stateChange(str) {
     $('.actor').hide();
     $('.' + str).show();
@@ -35,4 +45,9 @@ function stateChange(str) {
 /*--- Update the question count ---*/
 function updateCount (count) {
 	$('.currentquestion').text(questionCount);
+}
+
+/*--- Update the question count ---*/
+function updateScore (score) {
+	$('.points').text(quizScore);
 }
