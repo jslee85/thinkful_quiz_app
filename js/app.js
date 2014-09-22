@@ -2,31 +2,31 @@ var items = {
 	0: {
 		name: "clooney",
 		text: "George Clooney",
-		image: "../images/clooney.png",
+		image: "images/clooney.png",
 		correct: true
 	},
 	1: {
 		name: "dicaprio",
 		text: "Leonardo DiCaprio",
-		image: "../images/dicaprio.png",
+		image: "images/dicaprio.png",
 		correct: false
 	},
 	2: {
 		name: "williams",
 		text: "Michelle Williams",
-		image: "../images/williams.png",
+		image: "images/williams.png",
 		correct: false
 	},
 	3: {
 		name: "smith",
 		text: "Will Smith",
-		image: "../images/smith.png",
+		image: "images/smith.png",
 		correct: false
 	},
 	4: {
 		name: "portman",
 		text: "Natalie Portman",
-		image: "../images/portman.png",
+		image: "images/portman.png",
 		correct: true
 	}
 };
@@ -45,58 +45,48 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-  	/*--- Begin the question count 
-	$(".close").on('click', function() {
-		questionCount++;
-		updateCount(questionCount);
-  	});---*/
+  	loadData(0);
 
-	/*--- 
-	$(".circlebutton").on('click', function() {
-		stateChange('dicaprio');
-		questionCount++;
-		updateCount(questionCount);
-		$('.celebname').text('Leo DiCaprio');
-		if ($(this).hasClass( "yes")) {
-			quizScore+=20;
-			updateScore(quizScore);
-			$('.one').addClass('correct');
-		}
-		else {
-			$('.one').addClass('incorrect');
-		}
-	});---*/
+	$(".yes").on('click', function() {
+		checkAnswer(true);
+	});
+
+	$(".no").on('click', function() {
+		checkAnswer(false);
+	});
+
+	/*--- Start a new game ---*/
+	$('#newgame').on('click', function() {
+		resetGame();
+	});
 });
 
 function loadData (itemNumber) {
-	$('.name').text(items[itemNumber].name);
+	//update celebrity name, image, and question number
 	$('.celebname').text(items[itemNumber].text);
-	$('.img').attr('src', items[itemNumber].image);
+	$('.celebphotos').attr("src", items[itemNumber].image);
+	updateCount(currentItem+1);
 }
 
 function checkAnswer (value) {
 	//check if user answer is correct
-	if (value == answers[currentItem].correct) {
+	if (value == items[currentItem].correct) {
 		//correct
 		quizScore+=20;
-		$('.one').addClass('correct');
+		updateScore(quizScore);
+		$('.evaluate'+currentItem).addClass('correct');
 	}
 	else {
 		//incorrect
-		$('.one').addClass('incorrect');
+		$('.evaluate'+currentItem).addClass('incorrect');
 	}
-	loadData(itemNumber++);
+	currentItem++;
+	loadData(currentItem);
 } 
-
-/*--- Show correct celebrity image ---*/
-function stateChange(str) {
-    $('.actor').hide();
-    $('.' + str).show();
-}
 
 /*--- Update the question count ---*/
 function updateCount (count) {
-	$('.currentquestion').text(questionCount);
+	$('.currentquestion').text(count);
 }
 
 /*--- Update the question count ---*/
@@ -104,7 +94,11 @@ function updateScore (score) {
 	$('.points').text(quizScore);
 }
 
-/*--- Start a new game 
-function reloadPage() {
-	location.reload();
-}---*/
+function resetGame () {
+	quizScore = 0;
+	currentItem = 0;
+	updateScore(quizScore);
+	$('.quizresult').removeClass('correct incorrect');
+	updateCount(currentItem+1);
+	loadData(0);
+}
